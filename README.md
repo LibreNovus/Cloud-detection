@@ -1,1 +1,1 @@
-# Opencv-Cloud-detection
+# A learning experience. Opencv. Keras. Tensorflow

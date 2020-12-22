@@ -22,6 +22,15 @@ def commastart():
 	w =(255, 255, 255)  # white
 	k = (0, 0, 0)       # blank
 	
+	ddr = (255, 0, 0)
+	ddk = (0, 0, 0)
+	ddy = (255, 255, 0)  # pika yellow
+	ddc = (0, 255, 255)  # pika cyan
+	ddg = (0, 255, 0)  # pika green
+	ddo = (184, 103, 22) # pika orange
+	dlo = (255, 143, 0) # pika ligt orange
+	ddk = (97, 97, 97)   # pika gray
+	
 	#rainbow = [r, o, y, g, c, b, p, n]
 	
 	comma = [
@@ -36,24 +45,45 @@ def commastart():
 	        ]
 	
 	comma_red = [
-	        g, g, g, g, g, g, g, g,
-	        g, g, g, g, g, g, g, g,
-	        g, g, g, r, r, g, g, g,
-	        g, g, g, r, r, g, g, g,
-	        g, g, g, g, r, g, g, g,
-	        g, g, g, r, g, g, g, g,
-	        g, g, g, g, g, g, g, g,
-	        g, g, g, g, g, g, g, g
+	        w, w, w, w, w, w, w, w,
+	        w, w, w, w, w, w, w, w,
+	        w, w, w, r, r, w, w, w,
+	        w, w, w, r, r, w, w, w,
+	        w, w, w, w, r, w, w, w,
+	        w, w, w, r, w, w, w, w,
+	        w, w, w, w, w, w, w, w,
+	        w, w, w, w, w, w, w, w
+	        ]
+	        
+	denmark = [
+	        r, r, w, w, r, r, r, r,
+	        r, r, w, w, r, r, r, r,
+	        r, r, w, w, r, r, r, r,
+	        w, w, w, w, w, w, w, w,
+	        w, w, w, w, w, w, w, w,
+	        r, r, w, w, r, r, r, r,
+	        r, r, w, w, r, r, r, r,
+	        r, r, w, w, r, r, r, r
+	        ]
+	
+	pika = [
+	        ddc, ddg, ddg, ddc, ddc, ddc, ddc, ddg,
+	        ddc, ddc, ddy, dlo, ddc, ddc, ddc, ddy,
+	        ddc, ddc, ddc, ddy, ddy, ddy, ddy, ddy,
+	        dlo, dlo, ddc, ddy, ddk, ddy, ddy, ddk,
+	        dlo, dlo, ddc, ddr, ddy, ddy, ddy, ddy,
+	        ddc, ddo, ddc, ddy, dlo, dlo, dlo, ddc,
+	        ddc, ddo, ddy, dlo, ddy, dlo, ddy, ddc,
+	        ddg, ddg, ddy, dlo, ddo, ddo, dlo, ddg
 	        ]
 	
 	while True:
 	    sense.clear()
-	
-	    sense.set_pixels(comma)
+	    sense.set_pixels(denmark)
 	    sleep(3)
 	    
 	    for y in range(8):
-	        colour = g
+	        colour = w
 	        for x in range(8):
 	            if x == 3 and y == 5:
 	                sense.set_pixel(3, 5 , r)
@@ -71,19 +101,20 @@ def commastart():
 	                sense.set_pixel(x, y, colour)
 	        sleep(0.20)
 	    sleep(1.5)
-	    for t in range(18):
+	    for t in range(6):
 	        r1 = random.randint(0, 1) 
 	        sense.clear()
-	        sleep(0.1)
+	        sleep(0.3)
 	        sense.set_pixels(comma_red)
 	        if r1 >= 0.5:
 	            sense.flip_v()
 	        else:
 	            sense.flip_h()
-	        sleep(0.05)
+	        sleep(0.3)
 	     
-	    sense.show_message("Team Comma", text_colour = g, back_colour = k)
-
+	    sense.show_message("Team Comma", text_colour = r, back_colour = w)
+	    sense.set_pixels(pika)
+	    sleep(10)
 
 def getLocation():
 

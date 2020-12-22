@@ -8,8 +8,6 @@ sense = SenseHat()
 # camera = PiCamera()
 # sense.show_message("Hello")
 
-day = False
-
 def commastart():	
 	r = (255, 0, 0)     # red
 	o = (255, 128, 0)   # orange

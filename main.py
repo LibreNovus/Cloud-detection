@@ -138,11 +138,9 @@ def isDay():
 	abs_vinkel = abs(vinkel)
 	
 	if 3/2*math.pi > abs_vinkel > math.pi/2:
-		day = False
-		return day
+		return False
 	else:
-		day = True
-		return day
+		return True
 
 def main():
 	if isDay() == True:

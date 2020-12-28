@@ -75,43 +75,43 @@ def commastart():
 	        ddg, ddg, ddy, dlo, ddo, ddo, dlo, ddg
 	        ]
 	
-	while True:
-	    sense.clear()
-	    sense.set_pixels(denmark)
-	    sleep(3)
-	    
-	    for y in range(8):
-	        colour = w
-	        for x in range(8):
-	            if x == 3 and y == 5:
-	                sense.set_pixel(3, 5 , r)
-	            elif x == 4 and y == 4:
-	                sense.set_pixel(4, 4 , r)
-	            elif x == 4 and y == 3:
-	                sense.set_pixel(4, 3 , r)
-	            elif x == 4 and y == 2:
-	                sense.set_pixel(4, 2 , r)
-	            elif x == 3 and y == 2:
-	                sense.set_pixel(3, 2 , r)
-	            elif x == 3 and y == 3:
-	                sense.set_pixel(3, 3 , r)
-	            else:
-	                sense.set_pixel(x, y, colour)
-	        sleep(0.20)
-	    sleep(1.5)
-	    for t in range(6):
-	        r1 = random.randint(0, 1) 
-	        sense.clear()
-	        sleep(0.3)
-	        sense.set_pixels(comma_red)
-	        if r1 >= 0.5:
-	            sense.flip_v()
+	sense.clear()
+	sense.set_pixels(denmark)
+	sleep(3)
+	
+	for y in range(8):
+	    colour = w
+	    for x in range(8):
+	        if x == 3 and y == 5:
+	            sense.set_pixel(3, 5 , r)
+	        elif x == 4 and y == 4:
+	            sense.set_pixel(4, 4 , r)
+	        elif x == 4 and y == 3:
+	            sense.set_pixel(4, 3 , r)
+	        elif x == 4 and y == 2:
+	            sense.set_pixel(4, 2 , r)
+	        elif x == 3 and y == 2:
+	            sense.set_pixel(3, 2 , r)
+	        elif x == 3 and y == 3:
+	            sense.set_pixel(3, 3 , r)
 	        else:
-	            sense.flip_h()
-	        sleep(0.3)
-	     
-	    sense.show_message("Team Comma", text_colour = r, back_colour = w)
-	    sleep(2)
+	            sense.set_pixel(x, y, colour)
+	    sleep(0.20)
+	sleep(1.5)
+	for t in range(6):
+	    r1 = random.randint(0, 1) 
+	    sense.clear()
+	    sleep(0.3)
+	    sense.set_pixels(comma_red)
+	    if r1 >= 0.5:
+	        sense.flip_v()
+	    else:
+	        sense.flip_h()
+	    sleep(0.3)
+	 
+	sense.show_message("Team Comma", text_colour = r, back_colour = w)
+	sleep(2)
+	main()
 
 def getLocation():
 	pass
@@ -140,11 +140,10 @@ def isDay():
 
 def main():
 	if isDay() == True:
-		print('Daytime')
+		print('Daytime comma starting')
 		commastart()
 	elif isDay() == False:
-		print('Nighttime')
-		commastart()
+		print('Nighttime comma waiting')
 
 if __name__ == '__main__':
 	main()

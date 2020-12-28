@@ -1,10 +1,10 @@
-from sense_hat import SenseHat
+#from sense_hat import SenseHat
 # from picamera import PiCamera
 import ephem
 import math
 import random
 from time import sleep
-sense = SenseHat()
+#sense = SenseHat()
 # camera = PiCamera()
 # sense.show_message("Hello")
 
@@ -115,7 +115,7 @@ def commastart():
 	    sleep(10)
 
 def getLocation():
-
+	pass
 def isDay():
 	name = "ISS (ZARYA)"
 	line1 = "1 25544U 98067A   20299.39644679  .00001347  00000-0  32240-4 0  9990"

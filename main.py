@@ -1,10 +1,10 @@
-from sense_hat import SenseHat
+#from sense_hat import SenseHat
 # from picamera import PiCamera
 import ephem
 import math
 import random
 from time import sleep
-sense = SenseHat()
+#sense = SenseHat()
 # camera = PiCamera()
 # sense.show_message("Hello")
 

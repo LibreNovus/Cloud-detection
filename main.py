@@ -111,11 +111,10 @@ def commastart():
 	        sleep(0.3)
 	     
 	    sense.show_message("Team Comma", text_colour = r, back_colour = w)
-	    sense.set_pixels(pika)
-	    sleep(10)
+	    sleep(2)
 
 def getLocation():
-
+	pass
 def isDay():
 	name = "ISS (ZARYA)"
 	line1 = "1 25544U 98067A   20299.39644679  .00001347  00000-0  32240-4 0  9990"
@@ -142,8 +141,10 @@ def isDay():
 def main():
 	if isDay() == True:
 		print('Daytime')
+		commastart()
 	elif isDay() == False:
 		print('Nighttime')
+		commastart()
 
 if __name__ == '__main__':
 	main()
